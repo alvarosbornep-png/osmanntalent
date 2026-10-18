@@ -529,7 +529,7 @@ es:{
       const res=await fetch(FORM_ENDPOINT,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});
       const d=await res.json().catch(()=>({}));
       if(res.ok&&(d.ok||d.success===true||d.success==="true")){show("ok",t("f.ok"));form.reset();}
-      else show("err",d.error==="invalid"?t("f.invalid"):t("f.err"));
+      else show("err",d.error==="invalid"?t("f.invalid"):(d.message||t("f.err")));
     }catch(err){show("err",t("f.err"));}
     finally{btn.disabled=false;btn.textContent=t("f.send");}
   });
