@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osmann Talent | International Executive Search</title>
+<meta name="description" content="Osmann Talent ist eine internationale Executive-Search-Beratung mit Standorten in Berlin, Barcelona und London.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='26' cy='26' r='19' fill='none' stroke='%2310274a' stroke-width='6'/%3E%3Ccircle cx='26' cy='26' r='6' fill='%23b8955a'/%3E%3Cline x1='41' y1='41' x2='56' y2='56' stroke='%23b8955a' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{--navy:#10274a;--navy-dark:#0a1a33;--gold:#b8955a;--gold-light:#d8bf91;--ink:#1d2433;--muted:#5b6475;--line:#e4e1da;--soft:#f7f5f1;--r:4px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Montserrat","Helvetica Neue",Arial,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* Logo */
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand .bt{display:flex;flex-direction:column;line-height:1}
+.brand .bn{font-size:19px;letter-spacing:.06em;color:var(--navy)}
+.brand .bn b{font-weight:800}.brand .bn span{font-weight:300}
+.brand .bs{font-size:7.5px;letter-spacing:.32em;color:var(--gold);margin-top:5px;font-weight:600}
+.brand.light .bn{color:#fff}.brand.light .ring{stroke:#fff}
+
+/* Header */
+.header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header .container{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+.nav a:hover{color:var(--gold)}
+.lang{display:flex;gap:4px;margin-left:8px}
+.lang button{font:inherit;font-size:12px;font-weight:700;background:none;border:1px solid transparent;color:var(--muted);padding:5px 8px;cursor:pointer;border-radius:var(--r)}
+.lang button.active{color:var(--navy);border-color:var(--gold)}
+.menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.menu-toggle span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0}
+
+/* Hero */
+.hero{min-height:92vh;display:flex;align-items:center;color:#fff;padding:140px 0 90px;position:relative;overflow:hidden;
+background:radial-gradient(circle at 85% 20%,rgba(184,149,90,.18),transparent 45%),linear-gradient(135deg,var(--navy-dark),var(--navy))}
+.hero::after{content:"";position:absolute;right:-120px;bottom:-120px;width:520px;height:520px;border:46px solid rgba(255,255,255,.04);border-radius:50%}
+.eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.hero h1{font-size:clamp(34px,5.2vw,62px);line-height:1.12;font-weight:700;max-width:820px}
+.hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:640px;margin:26px 0 40px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:16px 32px;border-radius:var(--r);border:1px solid var(--gold);cursor:pointer;font-family:inherit;transition:.2s}
+.btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:#a6824a}
+.btn-ghost{color:#fff;background:transparent;margin-left:12px}.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.cities{margin-top:56px;display:flex;gap:28px;flex-wrap:wrap;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.cities span::before{content:"●";color:var(--gold);margin-right:10px;font-size:9px;vertical-align:2px}
+
+/* Sections */
+section{padding:100px 0}
+.soft{background:var(--soft)}
+.head{max-width:720px;margin-bottom:56px}
+.head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.2;color:var(--navy);font-weight:700}
+.head p{color:var(--muted);margin-top:16px;font-size:17px}
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:64px}
+.about p{color:var(--muted);margin-bottom:18px}
+.value{border-left:3px solid var(--gold);padding:6px 0 6px 22px;margin-bottom:20px}
+.value h3{font-size:17px;color:var(--navy);margin-bottom:4px}
+.value p{margin:0;font-size:15px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);padding:36px 30px;border-radius:var(--r);transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,39,74,.08);border-color:var(--gold-light)}
+.card .num{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.15em}
+.card h3{font-size:19px;color:var(--navy);margin:14px 0 10px;line-height:1.3}
+.card p{color:var(--muted);font-size:15px}
+.sectors{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.sector{background:#fff;padding:30px 24px}
+.sector h3{font-size:16px;color:var(--navy);margin-bottom:6px}
+.sector p{font-size:14px;color:var(--muted)}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;counter-reset:step}
+.step{position:relative;padding-top:28px;border-top:2px solid var(--navy)}
+.step::before{counter-increment:step;content:"0" counter(step);position:absolute;top:-16px;left:0;background:var(--soft);padding-right:12px;font-weight:700;color:var(--gold);font-size:20px}
+.step h3{font-size:17px;color:var(--navy);margin-bottom:8px}
+.step p{font-size:15px;color:var(--muted)}
+.band{background:var(--navy);color:#fff;padding:80px 0}
+.band .grid3{gap:48px}
+.band h3{color:var(--gold);font-size:18px;margin-bottom:10px}
+.band p{color:rgba(255,255,255,.75);font-size:15px}
+.office{border:1px solid var(--line);padding:34px 30px;border-radius:var(--r)}
+.office .tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.office h3{font-size:24px;color:var(--navy);margin:8px 0 6px}
+.office p{color:var(--muted);font-size:15px}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.5fr;gap:64px}
+.contact-info p{color:var(--muted);margin-bottom:22px}
+.mail{font-size:18px;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.field{display:flex;flex-direction:column;gap:6px}
+.full{grid-column:1/-1}
+label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+input,select,textarea{font:inherit;font-size:15px;padding:13px 14px;border:1px solid #cfd3da;border-radius:var(--r);background:#fff;color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold-light);border-color:var(--gold)}
+textarea{min-height:150px;resize:vertical}
+.check{flex-direction:row;align-items:flex-start;gap:10px}
+.check input{width:auto;margin-top:4px}
+.check span{font-size:13px;color:var(--muted)}
+.hp{position:absolute;left:-9999px}
+.status{grid-column:1/-1;font-size:15px;padding:14px 16px;border-radius:var(--r);display:none}
+.status.ok{display:block;background:#eef6ee;color:#25602a;border:1px solid #b9dbbb}
+.status.err{display:block;background:#fbeeee;color:#8a2525;border:1px solid #e6bcbc}
+button[disabled]{opacity:.6;cursor:wait}
+
+/* Footer */
+.footer{background:var(--navy-dark);color:rgba(255,255,255,.7);padding:56px 0 30px;font-size:14px}
+.footer .top{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer .bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:13px}
+.footer a{text-decoration:none;color:rgba(255,255,255,.7)}
+.footer a:hover{color:var(--gold)}
+.footer .links{display:flex;gap:20px}
+
+/* Responsive */
+@media(max-width:980px){.grid3{grid-template-columns:1fr 1fr}.sectors{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr;row-gap:48px}.about,.contact{grid-template-columns:1fr;gap:40px}}
+@media(max-width:820px){.menu-toggle{display:block}.nav{position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:18px;padding:24px;border-bottom:1px solid var(--line);display:none}.nav.open{display:flex}.lang{margin-left:0}}
+@media(max-width:600px){section{padding:72px 0}.container{padding:0 16px}.grid3,.sectors,.process,form{grid-template-columns:1fr}.btn-ghost{margin:12px 0 0}.brand .bn{font-size:16px}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a href="#top" class="brand" aria-label="Osmann Talent">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle class="ring" cx="26" cy="26" r="19" fill="none" stroke="#10274a" stroke-width="5"/><circle cx="26" cy="26" r="6" fill="#b8955a"/><line x1="41" y1="41" x2="56" y2="56" stroke="#b8955a" stroke-width="7" stroke-linecap="round"/></svg>
+      <span class="bt"><span class="bn"><b>OSMANN</b> <span>TALENT</span></span><span class="bs">INTERNATIONAL EXECUTIVE SEARCH</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav">
+      <a href="#about" data-i18n="nav.about">Über uns</a>
+      <a href="#services" data-i18n="nav.services">Leistungen</a>
+      <a href="#sectors" data-i18n="nav.sectors">Branchen</a>
+      <a href="#process" data-i18n="nav.process">Prozess</a>
+      <a href="#offices" data-i18n="nav.offices">Standorte</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+      <div class="lang">
+        <button type="button" data-lang="de" class="active">DE</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow" data-i18n="hero.eyebrow">International Executive Search</span>
+      <h1 data-i18n="hero.title">Wir finden die Führungskräfte, die Ihr Unternehmen voranbringen.</h1>
+      <p data-i18n="hero.text"></p>
+      <a href="#contact" class="btn btn-gold" data-i18n="hero.cta1">Anfrage senden</a>
+      <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">Unsere Leistungen</a>
+      <div class="cities"><span>Berlin</span><span>Barcelona</span><span>London</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about">
+      <div>
+        <span class="eyebrow" data-i18n="about.eyebrow">Über uns</span>
+        <div class="head" style="margin-bottom:28px"><h2 data-i18n="about.title"></h2></div>
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+      </div>
+      <div>
+        <div class="value"><h3 data-i18n="about.v1t"></h3><p data-i18n="about.v1p"></p></div>
+        <div class="value"><h3 data-i18n="about.v2t"></h3><p data-i18n="about.v2p"></p></div>
+        <div class="value"><h3 data-i18n="about.v3t"></h3><p data-i18n="about.v3p"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="soft">
+    <div class="container">
+      <div class="head">
+        <span class="eyebrow" data-i18n="services.eyebrow">Leistungen</span>
+        <h2 data-i18n="services.title"></h2>
+        <p data-i18n="services.text"></p>
+      </div>
+      <div class="grid3">
+        <article class="card"><span class="num">01</span><h3 data-i18n="s1.t"></h3><p data-i18n="s1.p"></p></article>
+        <article class="card"><span class="num">02</span><h3 data-i18n="s2.t"></h3><p data-i18n="s2.p"></p></article>
+        <article class="card"><span class="num">03</span><h3 data-i18n="s3.t"></h3><p data-i18n="s3.p"></p></article>
+        <article class="card"><span class="num">04</span><h3 data-i18n="s4.t"></h3><p data-i18n="s4.p"></p></article>
+        <article class="card"><span class="num">05</span><h3 data-i18n="s5.t"></h3><p data-i18n="s5.p"></p></article>
+        <article class="card"><span class="num">06</span><h3 data-i18n="s6.t"></h3><p data-i18n="s6.p"></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sectors">
+    <div class="container">
+      <div class="head">
+        <span class="eyebrow" data-i18n="sectors.eyebrow">Branchen</span>
+        <h2 data-i18n="sectors.title"></h2>
+      </div>
+      <div class="sectors">
+        <div class="sector"><h3 data-i18n="sec1.t"></h3><p data-i18n="sec1.p"></p></div>
+        <div class="sector"><h3 data-i18n="sec2.t"></h3><p data-i18n="sec2.p"></p></div>
+        <div class="sector"><h3 data-i18n="sec3.t"></h3><p data-i18n="sec3.p"></p></div>
+        <div class="sector"><h3 data-i18n="sec4.t"></h3><p data-i18n="sec4.p"></p></div>
+        <div class="sector"><h3 data-i18n="sec5.t"></h3><p data-i18n="sec5.p"></p></div>
+        <div class="sector"><h3 data-i18n="sec6.t"></h3><p data-i18n="sec6.p"></p></div>
+        <div class="sector"><h3 data-i18n="sec7.t"></h3><p data-i18n="sec7.p"></p></div>
+        <div class="sector"><h3 data-i18n="sec8.t"></h3><p data-i18n="sec8.p"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="soft">
+    <div class="container">
+      <div class="head">
+        <span class="eyebrow" data-i18n="process.eyebrow">Unser Prozess</span>
+        <h2 data-i18n="process.title"></h2>
+      </div>
+      <div class="process">
+        <div class="step"><h3 data-i18n="p1.t"></h3><p data-i18n="p1.p"></p></div>
+        <div class="step"><h3 data-i18n="p2.t"></h3><p data-i18n="p2.p"></p></div>
+        <div class="step"><h3 data-i18n="p3.t"></h3><p data-i18n="p3.p"></p></div>
+        <div class="step"><h3 data-i18n="p4.t"></h3><p data-i18n="p4.p"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="container grid3">
+      <div><h3 data-i18n="why1.t"></h3><p data-i18n="why1.p"></p></div>
+      <div><h3 data-i18n="why2.t"></h3><p data-i18n="why2.p"></p></div>
+      <div><h3 data-i18n="why3.t"></h3><p data-i18n="why3.p"></p></div>
+    </div>
+  </div>
+
+  <section id="offices">
+    <div class="container">
+      <div class="head">
+        <span class="eyebrow" data-i18n="offices.eyebrow">Standorte</span>
+        <h2 data-i18n="offices.title"></h2>
+      </div>
+      <div class="grid3">
+        <div class="office"><span class="tag" data-i18n="o1.tag"></span><h3>Berlin</h3><p data-i18n="o1.p"></p></div>
+        <div class="office"><span class="tag" data-i18n="o2.tag"></span><h3>Barcelona</h3><p data-i18n="o2.p"></p></div>
+        <div class="office"><span class="tag" data-i18n="o3.tag"></span><h3>London</h3><p data-i18n="o3.p"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="soft">
+    <div class="container contact">
+      <div class="contact-info">
+        <span class="eyebrow" data-i18n="contact.eyebrow">Kontakt</span>
+        <div class="head" style="margin-bottom:24px"><h2 data-i18n="contact.title"></h2></div>
+        <p data-i18n="contact.text"></p>
+        <p data-i18n="contact.mail"></p>
+        <a class="mail" href="mailto:talent@osmanntalent.com">talent@osmanntalent.com</a>
+        <p style="margin-top:28px">Berlin · Barcelona · London</p>
+      </div>
+
+      <form id="contact-form" novalidate>
+        <input type="hidden" name="lang" id="form-lang" value="de">
+        <input type="hidden" name="_subject" value="Neue Anfrage – Osmann Talent Website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+
+        <div class="field"><label for="name" data-i18n="f.name"></label><input id="name" name="name" type="text" maxlength="120" autocomplete="name"></div>
+        <div class="field"><label for="company" data-i18n="f.company"></label><input id="company" name="company" type="text" maxlength="160" autocomplete="organization"></div>
+        <div class="field"><label for="email" data-i18n="f.email"></label><input id="email" name="email" type="email" required maxlength="160" autocomplete="email"></div>
+        <div class="field"><label for="phone" data-i18n="f.phone"></label><input id="phone" name="phone" type="tel" required maxlength="40" pattern="[0-9+()\s\-./]{6,40}" autocomplete="tel"></div>
+        <div class="field full">
+          <label for="sector" data-i18n="f.sector"></label>
+          <select id="sector" name="sector" required>
+            <option value="" data-i18n="f.choose"></option>
+            <option data-i18n="sec1.t"></option>
+            <option data-i18n="sec2.t"></option>
+            <option data-i18n="sec3.t"></option>
+            <option data-i18n="sec4.t"></option>
+            <option data-i18n="sec5.t"></option>
+            <option data-i18n="sec6.t"></option>
+            <option data-i18n="sec7.t"></option>
+            <option data-i18n="sec8.t"></option>
+            <option data-i18n="f.other"></option>
+          </select>
+        </div>
+        <div class="field full"><label for="subject" data-i18n="f.subject"></label><input id="subject" name="subject" type="text" required maxlength="200"></div>
+        <div class="field full"><label for="message" data-i18n="f.message"></label><textarea id="message" name="message" required maxlength="5000"></textarea></div>
+        <div class="field full check">
+          <input id="privacy" name="privacy" type="checkbox" value="1" required>
+          <span><span data-i18n="f.privacy"></span> <a href="datenschutz.html" target="_blank">↗</a></span>
+        </div>
+        <div class="field full"><button type="submit" class="btn btn-gold" data-i18n="f.send"></button></div>
+        <div id="form-status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="top">
+      <a href="#top" class="brand light" aria-label="Osmann Talent">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle class="ring" cx="26" cy="26" r="19" fill="none" stroke="#fff" stroke-width="5"/><circle cx="26" cy="26" r="6" fill="#b8955a"/><line x1="41" y1="41" x2="56" y2="56" stroke="#b8955a" stroke-width="7" stroke-linecap="round"/></svg>
+        <span class="bt"><span class="bn"><b>OSMANN</b> <span>TALENT</span></span><span class="bs">INTERNATIONAL EXECUTIVE SEARCH</span></span>
+      </a>
+      <a href="mailto:talent@osmanntalent.com">talent@osmanntalent.com</a>
+    </div>
+    <div class="bottom">
+      <span>© <span id="year">2026</span> Osmann Talent · Berlin · Barcelona · London · <span data-i18n="footer.rights"></span></span>
+      <div class="links">
+        <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+        <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== CONFIGURACIÓN DEL FORMULARIO =====
+   Con PHP en tu hosting:  "contact.php"
+   Sin PHP (solo HTML):    "https://formsubmit.co/ajax/talent@osmanntalent.com"  */
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/talent@osmanntalent.com";
+const DEFAULT_LANG = "de";
+
+const I18N = {
+de:{
+"meta.title":"Osmann Talent | International Executive Search",
+"nav.about":"Über uns","nav.services":"Leistungen","nav.sectors":"Branchen","nav.process":"Prozess","nav.offices":"Standorte","nav.contact":"Kontakt",
+"hero.eyebrow":"International Executive Search",
+"hero.title":"Wir finden die Führungskräfte, die Ihr Unternehmen voranbringen.",
+"hero.text":"Osmann Talent verbindet Unternehmen in ganz Europa mit herausragenden Führungspersönlichkeiten – diskret, präzise und mit tiefem Marktverständnis.",
+"hero.cta1":"Anfrage senden","hero.cta2":"Unsere Leistungen",
+"about.eyebrow":"Über uns",
+"about.title":"Executive Search mit internationaler Perspektive und persönlicher Handschrift.",
+"about.p1":"Osmann Talent ist eine unabhängige Personalberatung, spezialisiert auf die Besetzung von Führungs- und Schlüsselpositionen. Mit Standorten in Berlin, Barcelona und London begleiten wir Unternehmen bei ihren wichtigsten Personalentscheidungen – national wie grenzüberschreitend.",
+"about.p2":"Wir verstehen uns als langfristiger Partner: Wir lernen Ihre Organisation, Ihre Kultur und Ihre Ziele kennen, bevor wir den Markt ansprechen. So finden wir nicht nur passende Lebensläufe, sondern Persönlichkeiten, die bleiben und wirken.",
+"about.v1t":"Diskretion","about.v1p":"Vertraulichkeit gegenüber Kunden und Kandidaten hat für uns oberste Priorität.",
+"about.v2t":"Qualität vor Quantität","about.v2p":"Eine kleine, fundiert geprüfte Shortlist statt einer Flut an Profilen.",
+"about.v3t":"Internationales Netzwerk","about.v3p":"Direkter Zugang zu Talenten in Deutschland, Spanien, Großbritannien und darüber hinaus.",
+"services.eyebrow":"Leistungen","services.title":"Lösungen für jede Phase Ihrer Führungsentwicklung",
+"services.text":"Von der Einzelbesetzung bis zum Aufbau ganzer Managementteams – wir bieten maßgeschneiderte Beratung.",
+"s1.t":"Executive Search","s1.p":"Direktansprache von Top-Führungskräften für C-Level, Geschäftsführung und Vorstand.",
+"s2.t":"Management & Fachexperten","s2.p":"Besetzung von Schlüsselpositionen im mittleren und oberen Management, z. B. Vertrieb, Finanzen, Operations.",
+"s3.t":"Interim Management","s3.p":"Erfahrene Interim-Manager für Übergangsphasen, Projekte, Restrukturierungen und Markteintritte.",
+"s4.t":"Leadership Assessment","s4.p":"Fundierte Bewertung von Kandidaten und bestehenden Teams anhand strukturierter Interviews und Kompetenzmodelle.",
+"s5.t":"Market Mapping","s5.p":"Talent- und Wettbewerbsanalysen, die Ihnen einen klaren Überblick über den Markt und verfügbare Profile geben.",
+"s6.t":"Internationale Expansion","s6.p":"Aufbau lokaler Teams und Besetzung von Country-Manager-Rollen beim Eintritt in neue Märkte.",
+"sectors.eyebrow":"Branchen","sectors.title":"Branchenexpertise, die den Unterschied macht",
+"sec1.t":"Konsumgüter & FMCG","sec1.p":"Marken, Handel und Key Account Management.",
+"sec2.t":"Industrie & Fertigung","sec2.p":"Chemie, Maschinenbau, Automotive.",
+"sec3.t":"Technologie & Digital","sec3.p":"Software, SaaS, E-Commerce, Data.",
+"sec4.t":"Finanzen & Private Equity","sec4.p":"Banken, Versicherungen, Portfoliounternehmen.",
+"sec5.t":"Life Sciences & Healthcare","sec5.p":"Pharma, Medizintechnik, Gesundheitswesen.",
+"sec6.t":"Handel & Retail","sec6.p":"Einzelhandel, Großhandel, Omnichannel.",
+"sec7.t":"Energie & Nachhaltigkeit","sec7.p":"Erneuerbare Energien, Utilities, ESG.",
+"sec8.t":"Logistik & Supply Chain","sec8.p":"Transport, Distribution, Beschaffung.",
+"process.eyebrow":"Unser Prozess","process.title":"Strukturiert, transparent und schnell",
+"p1.t":"Analyse","p1.p":"Gemeinsame Definition von Rolle, Anforderungsprofil, Kultur und Vergütungsrahmen.",
+"p2.t":"Research & Direktansprache","p2.p":"Systematische Marktanalyse und vertrauliche Ansprache passender Kandidaten.",
+"p3.t":"Auswahl & Bewertung","p3.p":"Strukturierte Interviews, Referenzen und eine fundierte Shortlist mit Empfehlungen.",
+"p4.t":"Abschluss & Onboarding","p4.p":"Begleitung bis zur Vertragsunterzeichnung und Follow-up in den ersten Monaten.",
+"why1.t":"Drei Länder, ein Team","why1.p":"Unsere Standorte in Berlin, Barcelona und London arbeiten als ein Team – für Suchen über Ländergrenzen hinweg.",
+"why2.t":"Mehrsprachig","why2.p":"Wir arbeiten auf Deutsch, Englisch und Spanisch und kennen die kulturellen Unterschiede der Märkte.",
+"why3.t":"Persönliche Betreuung","why3.p":"Ein fester Ansprechpartner begleitet jedes Mandat von der Analyse bis zum Onboarding.",
+"offices.eyebrow":"Standorte","offices.title":"Präsent in drei europäischen Metropolen",
+"o1.tag":"Deutschland","o1.p":"Unser Hub für die DACH-Region.",
+"o2.tag":"Spanien","o2.p":"Unser Hub für Südeuropa und Lateinamerika.",
+"o3.tag":"Vereinigtes Königreich","o3.p":"Unser Hub für Großbritannien und internationale Mandate.",
+"contact.eyebrow":"Kontakt","contact.title":"Sprechen wir über Ihre nächste Besetzung",
+"contact.text":"Senden Sie uns Ihre Anfrage über das Formular. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+"contact.mail":"Oder schreiben Sie uns direkt:",
+"f.name":"Ansprechpartner","f.company":"Unternehmen","f.email":"E-Mail *","f.phone":"Telefon *",
+"f.sector":"Branche *","f.subject":"Betreff *","f.message":"Nachricht *",
+"f.choose":"Bitte auswählen…","f.other":"Sonstige",
+"f.privacy":"Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Weitere Informationen in der Datenschutzerklärung. *",
+"f.send":"Anfrage senden","f.sending":"Wird gesendet…",
+"f.ok":"Vielen Dank! Ihre Anfrage wurde gesendet. Wir melden uns in Kürze.",
+"f.err":"Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie uns an talent@osmanntalent.com.",
+"f.invalid":"Bitte füllen Sie alle Pflichtfelder korrekt aus.",
+"footer.rights":"Alle Rechte vorbehalten.","footer.imprint":"Impressum","footer.privacy":"Datenschutz"
+},
+en:{
+"meta.title":"Osmann Talent | International Executive Search",
+"nav.about":"About","nav.services":"Services","nav.sectors":"Sectors","nav.process":"Process","nav.offices":"Offices","nav.contact":"Contact",
+"hero.eyebrow":"International Executive Search",
+"hero.title":"We find the leaders who move your company forward.",
+"hero.text":"Osmann Talent connects companies across Europe with outstanding leaders – discreetly, precisely and with deep market insight.",
+"hero.cta1":"Send an enquiry","hero.cta2":"Our services",
+"about.eyebrow":"About us",
+"about.title":"Executive search with an international perspective and a personal touch.",
+"about.p1":"Osmann Talent is an independent search firm specialising in leadership and key positions. With offices in Berlin, Barcelona and London, we support companies in their most important people decisions – domestically and across borders.",
+"about.p2":"We see ourselves as a long-term partner: we get to know your organisation, culture and goals before approaching the market. That way we don't just find matching CVs, but people who stay and make an impact.",
+"about.v1t":"Discretion","about.v1p":"Confidentiality towards clients and candidates is our top priority.",
+"about.v2t":"Quality over quantity","about.v2p":"A small, thoroughly assessed shortlist instead of a flood of profiles.",
+"about.v3t":"International network","about.v3p":"Direct access to talent in Germany, Spain, the UK and beyond.",
+"services.eyebrow":"Services","services.title":"Solutions for every stage of your leadership development",
+"services.text":"From single placements to building entire management teams – we offer tailored advice.",
+"s1.t":"Executive Search","s1.p":"Direct search for senior executives at C-level, managing director and board level.",
+"s2.t":"Management & Specialists","s2.p":"Filling key middle and senior management roles, e.g. sales, finance, operations.",
+"s3.t":"Interim Management","s3.p":"Experienced interim managers for transitions, projects, restructurings and market entries.",
+"s4.t":"Leadership Assessment","s4.p":"Robust assessment of candidates and existing teams using structured interviews and competency models.",
+"s5.t":"Market Mapping","s5.p":"Talent and competitor analyses that give you a clear view of the market and available profiles.",
+"s6.t":"International Expansion","s6.p":"Building local teams and appointing country managers when entering new markets.",
+"sectors.eyebrow":"Sectors","sectors.title":"Sector expertise that makes the difference",
+"sec1.t":"Consumer Goods & FMCG","sec1.p":"Brands, retail and key account management.",
+"sec2.t":"Industrial & Manufacturing","sec2.p":"Chemicals, engineering, automotive.",
+"sec3.t":"Technology & Digital","sec3.p":"Software, SaaS, e-commerce, data.",
+"sec4.t":"Finance & Private Equity","sec4.p":"Banking, insurance, portfolio companies.",
+"sec5.t":"Life Sciences & Healthcare","sec5.p":"Pharma, medtech, healthcare.",
+"sec6.t":"Retail & Distribution","sec6.p":"Retail, wholesale, omnichannel.",
+"sec7.t":"Energy & Sustainability","sec7.p":"Renewables, utilities, ESG.",
+"sec8.t":"Logistics & Supply Chain","sec8.p":"Transport, distribution, procurement.",
+"process.eyebrow":"Our process","process.title":"Structured, transparent and fast",
+"p1.t":"Briefing","p1.p":"Jointly defining the role, profile, culture and compensation framework.",
+"p2.t":"Research & Approach","p2.p":"Systematic market research and confidential approach of suitable candidates.",
+"p3.t":"Selection & Assessment","p3.p":"Structured interviews, references and a well-founded shortlist with recommendations.",
+"p4.t":"Closing & Onboarding","p4.p":"Support through to contract signing and follow-up during the first months.",
+"why1.t":"Three countries, one team","why1.p":"Our Berlin, Barcelona and London offices work as one team – for cross-border searches.",
+"why2.t":"Multilingual","why2.p":"We work in German, English and Spanish and understand the cultural nuances of each market.",
+"why3.t":"Personal service","why3.p":"A dedicated consultant guides every mandate from briefing to onboarding.",
+"offices.eyebrow":"Offices","offices.title":"Present in three European business capitals",
+"o1.tag":"Germany","o1.p":"Our hub for the DACH region.",
+"o2.tag":"Spain","o2.p":"Our hub for Southern Europe and Latin America.",
+"o3.tag":"United Kingdom","o3.p":"Our hub for the UK and international mandates.",
+"contact.eyebrow":"Contact","contact.title":"Let's talk about your next hire",
+"contact.text":"Send us your enquiry using the form. We will get back to you within 24 hours.",
+"contact.mail":"Or email us directly:",
+"f.name":"Contact person","f.company":"Company","f.email":"Email *","f.phone":"Phone *",
+"f.sector":"Sector *","f.subject":"Subject *","f.message":"Message *",
+"f.choose":"Please select…","f.other":"Other",
+"f.privacy":"I agree that my details will be processed to handle my enquiry. More information in the privacy policy. *",
+"f.send":"Send enquiry","f.sending":"Sending…",
+"f.ok":"Thank you! Your enquiry has been sent. We will be in touch shortly.",
+"f.err":"The message could not be sent. Please email us at talent@osmanntalent.com.",
+"f.invalid":"Please fill in all required fields correctly.",
+"footer.rights":"All rights reserved.","footer.imprint":"Legal notice","footer.privacy":"Privacy"
+},
+es:{
+"meta.title":"Osmann Talent | International Executive Search",
+"nav.about":"Nosotros","nav.services":"Servicios","nav.sectors":"Sectores","nav.process":"Proceso","nav.offices":"Oficinas","nav.contact":"Contacto",
+"hero.eyebrow":"International Executive Search",
+"hero.title":"Encontramos a los líderes que hacen crecer tu empresa.",
+"hero.text":"Osmann Talent conecta a empresas de toda Europa con directivos excepcionales, con discreción, precisión y un profundo conocimiento del mercado.",
+"hero.cta1":"Solicitar información","hero.cta2":"Nuestros servicios",
+"about.eyebrow":"Nosotros",
+"about.title":"Executive search con perspectiva internacional y trato personal.",
+"about.p1":"Osmann Talent es una consultora independiente especializada en la búsqueda de directivos y posiciones clave. Con oficinas en Berlín, Barcelona y Londres, acompañamos a las empresas en sus decisiones de talento más importantes, tanto a nivel nacional como internacional.",
+"about.p2":"Nos entendemos como un socio a largo plazo: conocemos tu organización, tu cultura y tus objetivos antes de salir al mercado. Así no solo encontramos currículums que encajan, sino personas que se quedan y aportan.",
+"about.v1t":"Discreción","about.v1p":"La confidencialidad con clientes y candidatos es nuestra máxima prioridad.",
+"about.v2t":"Calidad antes que cantidad","about.v2p":"Una shortlist reducida y bien evaluada en lugar de una avalancha de perfiles.",
+"about.v3t":"Red internacional","about.v3p":"Acceso directo a talento en Alemania, España, Reino Unido y más allá.",
+"services.eyebrow":"Servicios","services.title":"Soluciones para cada etapa de tu equipo directivo",
+"services.text":"Desde una contratación puntual hasta la creación de equipos de dirección completos: ofrecemos un servicio a medida.",
+"s1.t":"Executive Search","s1.p":"Búsqueda directa de altos directivos para posiciones C-level, dirección general y consejo.",
+"s2.t":"Mandos y especialistas","s2.p":"Cobertura de posiciones clave de mandos medios y superiores: ventas, finanzas, operaciones…",
+"s3.t":"Interim Management","s3.p":"Directivos interinos con experiencia para transiciones, proyectos, reestructuraciones y entradas en mercado.",
+"s4.t":"Evaluación de liderazgo","s4.p":"Evaluación rigurosa de candidatos y equipos mediante entrevistas estructuradas y modelos de competencias.",
+"s5.t":"Market Mapping","s5.p":"Análisis de talento y competencia para darte una visión clara del mercado y de los perfiles disponibles.",
+"s6.t":"Expansión internacional","s6.p":"Creación de equipos locales y selección de country managers al entrar en nuevos mercados.",
+"sectors.eyebrow":"Sectores","sectors.title":"Conocimiento sectorial que marca la diferencia",
+"sec1.t":"Gran consumo y FMCG","sec1.p":"Marcas, distribución y key account management.",
+"sec2.t":"Industria y fabricación","sec2.p":"Química, ingeniería, automoción.",
+"sec3.t":"Tecnología y digital","sec3.p":"Software, SaaS, e-commerce, datos.",
+"sec4.t":"Finanzas y private equity","sec4.p":"Banca, seguros, empresas participadas.",
+"sec5.t":"Life sciences y salud","sec5.p":"Farma, tecnología médica, sanidad.",
+"sec6.t":"Retail y distribución","sec6.p":"Comercio minorista, mayorista, omnicanal.",
+"sec7.t":"Energía y sostenibilidad","sec7.p":"Renovables, utilities, ESG.",
+"sec8.t":"Logística y supply chain","sec8.p":"Transporte, distribución, compras.",
+"process.eyebrow":"Nuestro proceso","process.title":"Estructurado, transparente y ágil",
+"p1.t":"Análisis","p1.p":"Definimos juntos el puesto, el perfil, la cultura y el marco retributivo.",
+"p2.t":"Research y contacto directo","p2.p":"Análisis sistemático del mercado y contacto confidencial con los candidatos adecuados.",
+"p3.t":"Selección y evaluación","p3.p":"Entrevistas estructuradas, referencias y una shortlist sólida con recomendaciones.",
+"p4.t":"Cierre e incorporación","p4.p":"Acompañamiento hasta la firma y seguimiento durante los primeros meses.",
+"why1.t":"Tres países, un equipo","why1.p":"Nuestras oficinas de Berlín, Barcelona y Londres trabajan como un solo equipo en búsquedas internacionales.",
+"why2.t":"Multilingües","why2.p":"Trabajamos en alemán, inglés y español y conocemos las diferencias culturales de cada mercado.",
+"why3.t":"Atención personal","why3.p":"Un consultor dedicado acompaña cada proyecto desde el análisis hasta la incorporación.",
+"offices.eyebrow":"Oficinas","offices.title":"Presentes en tres grandes ciudades europeas",
+"o1.tag":"Alemania","o1.p":"Nuestro hub para la región DACH.",
+"o2.tag":"España","o2.p":"Nuestro hub para el sur de Europa y Latinoamérica.",
+"o3.tag":"Reino Unido","o3.p":"Nuestro hub para Reino Unido y proyectos internacionales.",
+"contact.eyebrow":"Contacto","contact.title":"Hablemos de tu próxima incorporación",
+"contact.text":"Envíanos tu solicitud a través del formulario. Te responderemos en menos de 24 horas.",
+"contact.mail":"O escríbenos directamente:",
+"f.name":"Persona de contacto","f.company":"Empresa","f.email":"Email *","f.phone":"Teléfono *",
+"f.sector":"Sector *","f.subject":"Asunto *","f.message":"Mensaje *",
+"f.choose":"Selecciona…","f.other":"Otro",
+"f.privacy":"Acepto que mis datos se traten para gestionar mi solicitud. Más información en la política de privacidad. *",
+"f.send":"Enviar solicitud","f.sending":"Enviando…",
+"f.ok":"¡Gracias! Tu solicitud se ha enviado. Te contactaremos en breve.",
+"f.err":"No se pudo enviar el mensaje. Escríbenos a talent@osmanntalent.com.",
+"f.invalid":"Rellena correctamente todos los campos obligatorios.",
+"footer.rights":"Todos los derechos reservados.","footer.imprint":"Aviso legal","footer.privacy":"Privacidad"
+}
+};
+
+(function(){
+  const SUPPORTED=["de","en","es"];
+  function initialLang(){
+    const u=new URLSearchParams(location.search).get("lang");
+    if(SUPPORTED.includes(u))return u;
+    try{const s=localStorage.getItem("osmann-lang");if(SUPPORTED.includes(s))return s;}catch(e){}
+    return DEFAULT_LANG;
+  }
+  let lang=initialLang();
+  const t=k=>(I18N[lang]&&I18N[lang][k])||I18N.de[k]||"";
+
+  function applyLang(l){
+    lang=l;
+    document.documentElement.lang=l;
+    document.querySelectorAll("[data-i18n]").forEach(el=>{const v=t(el.dataset.i18n);if(v)el.textContent=v;});
+    document.querySelectorAll("#sector option[data-i18n]").forEach(o=>{if(o.value!=="")o.value=o.textContent;});
+    document.title=t("meta.title");
+    document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("active",b.dataset.lang===l));
+    document.getElementById("form-lang").value=l;
+    try{localStorage.setItem("osmann-lang",l);}catch(e){}
+  }
+  document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.lang)));
+
+  const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector(".nav");
+  toggle.addEventListener("click",()=>toggle.setAttribute("aria-expanded",nav.classList.toggle("open")));
+  nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+  document.getElementById("year").textContent=new Date().getFullYear();
+
+  const form=document.getElementById("contact-form"),status=document.getElementById("form-status"),btn=form.querySelector("button[type=submit]");
+  const show=(c,m)=>{status.className="status "+c;status.textContent=m;};
+  form.addEventListener("submit",async e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();show("err",t("f.invalid"));return;}
+    btn.disabled=true;btn.textContent=t("f.sending");
+    try{
+      const res=await fetch(FORM_ENDPOINT,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});
+      const d=await res.json().catch(()=>({}));
+      if(res.ok&&(d.ok||d.success===true||d.success==="true")){show("ok",t("f.ok"));form.reset();}
+      else show("err",d.error==="invalid"?t("f.invalid"):t("f.err"));
+    }catch(err){show("err",t("f.err"));}
+    finally{btn.disabled=false;btn.textContent=t("f.send");}
+  });
+
+  applyLang(lang);
+})();
+</script>
+</body>
+</html>
