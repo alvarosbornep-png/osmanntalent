@@ -257,10 +257,10 @@ button[disabled]{opacity:.6;cursor:wait}
 
       <form id="contact-form" novalidate>
         <input type="hidden" name="lang" id="form-lang" value="de">
-        <input type="hidden" name="_subject" value="Neue Anfrage – Osmann Talent Website">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+        <!-- WEB3FORMS: pega aquí tu clave (Access Key) -->
+        <input type="hidden" name="access_key" value="4f626a1b-d63d-4874-88f4-5ee79b54bdbb">
+        <input type="hidden" name="from_name" value="Web Osmann Talent">
+        <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="field"><label for="name" data-i18n="f.name"></label><input id="name" name="name" type="text" maxlength="120" autocomplete="name"></div>
         <div class="field"><label for="company" data-i18n="f.company"></label><input id="company" name="company" type="text" maxlength="160" autocomplete="organization"></div>
@@ -317,7 +317,7 @@ button[disabled]{opacity:.6;cursor:wait}
 /* ===== CONFIGURACIÓN DEL FORMULARIO =====
    Con PHP en tu hosting:  "contact.php"
    Sin PHP (solo HTML):    "https://formsubmit.co/ajax/talent@osmanntalent.com"  */
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/talent@osmanntalent.com";
+const FORM_ENDPOINT = "https://api.web3forms.com/submit";
 const DEFAULT_LANG = "de";
 
 const I18N = {
